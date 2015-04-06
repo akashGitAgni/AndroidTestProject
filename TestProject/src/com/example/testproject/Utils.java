@@ -11,7 +11,7 @@ import android.widget.ImageView;
 
 class Utils {
 
-// Methods used from android developer tutorial .
+	// Methods used from android developer tutorial .
 	static int calculateInSampleSize(BitmapFactory.Options options,
 			int reqWidth, int reqHeight) {
 		final int height = options.outHeight;
@@ -33,6 +33,8 @@ class Utils {
 	static Bitmap decodeSampledBitmapFromPath(String pathName, int reqWidth,
 			int reqHeight) {
 
+		if (pathName == null)
+			return null;
 		final BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inJustDecodeBounds = true;
 		BitmapFactory.decodeFile(pathName, options);

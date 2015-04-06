@@ -32,20 +32,20 @@ public class TopFragment extends Fragment implements UIupdate {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.top_fragment, container, false);
-		Button amt_button = (Button)view.findViewById(R.id.amt_button);
+		Button amt_button = (Button) view.findViewById(R.id.amt_button);
 		amt_button.setOnClickListener(backButtonPress);
 		return view;
 	}
-	
-	View.OnClickListener backButtonPress =  new View.OnClickListener() {
-		
+
+	View.OnClickListener backButtonPress = new View.OnClickListener() {
+
 		@Override
 		public void onClick(View v) {
-			
+
 			Toast toast = Toast.makeText(getActivity(),
 					"Amount Button Pressed", Toast.LENGTH_SHORT);
 			toast.show();
-			
+
 		}
 	};
 
@@ -91,18 +91,18 @@ public class TopFragment extends Fragment implements UIupdate {
 
 			if (Utils.cancelPotentialWork(path, viewHolder.image)) {
 				final DecodeBitMapTask task = new DecodeBitMapTask(
-						viewHolder.image,100);
+						viewHolder.image, 100);
 				final Utils.AsyncDrawable asyncDrawable = new Utils.AsyncDrawable(
 						getResources(), icon, task);
 				viewHolder.image.setImageDrawable(asyncDrawable);
-				task.execute(imagePaths.get(i + 1));
+				task.execute(path);
 			}
 
 		}
 
 		@Override
 		public int getItemCount() {
-			return imagePaths == null ? 0 : 20;
+			return imagePaths == null ? 0 : (imagePaths.size() - 1);
 		}
 
 	}
@@ -118,7 +118,5 @@ public class TopFragment extends Fragment implements UIupdate {
 
 		}
 	}
-
-	
 
 }

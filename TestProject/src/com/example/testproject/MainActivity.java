@@ -80,8 +80,7 @@ public class MainActivity extends ActionBarActivity {
 			while (cursor.moveToNext()) {
 				PathOfImage = cursor.getString(column_index_data);
 				listOfAllImages.add(PathOfImage);
-
-			}
+				}
 		} catch (Exception e) {
 			Log.e("mylogs", "Some problems with cursor");
 		}
