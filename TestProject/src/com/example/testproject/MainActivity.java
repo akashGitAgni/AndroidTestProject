@@ -51,8 +51,6 @@ public class MainActivity extends ActionBarActivity {
 				@Override
 				public void run() {
 					for (UIupdate obj : fragments) {
-						Log.d("mylogs",
-								"list of all Images" + listOfAllImages.size());
 						obj.updateImages(listOfAllImages, defaultImage);
 					}
 				}

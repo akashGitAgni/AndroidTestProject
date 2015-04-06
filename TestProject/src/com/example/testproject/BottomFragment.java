@@ -49,7 +49,6 @@ public class BottomFragment extends Fragment implements UIupdate,
 	public void onClick(View v) {
 
 		if (v.getId() == R.id.backbutton) {
-			Log.d("mylog", "Back Button pressed");
 			getActivity().onBackPressed();
 
 		}

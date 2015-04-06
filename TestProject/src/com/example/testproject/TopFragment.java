@@ -87,7 +87,6 @@ public class TopFragment extends Fragment implements UIupdate {
 			if (imagePaths == null || imagePaths.size() == 0)
 				return;
 			String path = imagePaths.get(i + 1);
-			Log.d("mylogs", "bitmapWorkerTask : " + path);
 			viewHolder.imageName.setText("Image " + (i + 1));
 
 			if (Utils.cancelPotentialWork(path, viewHolder.image)) {

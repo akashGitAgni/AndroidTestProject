@@ -27,10 +27,8 @@ class DecodeBitMapTask extends AsyncTask<String, Void, Bitmap> {
 			final ImageView imageView = imageViewReference.get();
 			final DecodeBitMapTask bitmapWorkerTask = Utils
 					.getBitmapWorkerTask(imageView);
-			Log.d("mylogs", "bitmapWorkerTask");
 			if (this == bitmapWorkerTask && imageView != null) {
 				imageView.setImageBitmap(bitmap);
-				Log.d("mylogs", "setting bitmap");
 			}
 		}
 	}
