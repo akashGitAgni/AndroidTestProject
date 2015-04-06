@@ -18,8 +18,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class TopFragment extends Fragment implements UIupdate {
 
@@ -30,9 +32,22 @@ public class TopFragment extends Fragment implements UIupdate {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.top_fragment, container, false);
-
+		Button amt_button = (Button)view.findViewById(R.id.amt_button);
+		amt_button.setOnClickListener(backButtonPress);
 		return view;
 	}
+	
+	View.OnClickListener backButtonPress =  new View.OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			
+			Toast toast = Toast.makeText(getActivity(),
+					"Amount Button Pressed", Toast.LENGTH_SHORT);
+			toast.show();
+			
+		}
+	};
 
 	@Override
 	public void updateImages(ArrayList<String> listOfAllImages,
